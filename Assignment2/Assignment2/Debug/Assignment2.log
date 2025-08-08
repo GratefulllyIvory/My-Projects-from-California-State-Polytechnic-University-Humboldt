@@ -1,0 +1,4 @@
+﻿  Assignment2.cpp
+C:\Users\HP\source\repos\Assignment2\Assignment2\Assignment2.cpp(24): warning C4731: 'main': frame pointer register 'ebp' modified by inline assembly code
+C:\Users\HP\source\repos\Assignment2\Assignment2\Assignment2.cpp(41): warning C4731: 'main': frame pointer register 'ebp' modified by inline assembly code
+  Assignment2.vcxproj -> C:\Users\HP\source\repos\Assignment2\Debug\Assignment2.exe
