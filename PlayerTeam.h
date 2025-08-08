@@ -1,17 +1,4 @@
-// CS 112 Fall 2020 - Week 09 Lab
-// Skyler Kona and Anthony Shucraft and Daniel Desforges (We got 3! Yay!)
-
-/*
- * CS 112 Fall 2020 - Week 09 Lab
- *     C++ Classes and Methods
- */
-
-/* 
- * File:   PlayerTeam.h
- * Author: David
- *
- * Created on October 22, 2020, 11:11 PM
- */
+//Daniel Desforges Cs112 Fall 2020
 
 #ifndef PLAYERTEAM_H
 #define PLAYERTEAM_H
@@ -22,6 +9,7 @@
 #include <cmath>
 #include <fstream>
 #include <ctime>
+#include <vector>
 
 using namespace std;
 
@@ -37,31 +25,32 @@ public:
 
     // Place Headers for Constructors here
     
-    PlayerTeam(string name, int size);
+    PlayerTeam(string, int);
     PlayerTeam();
-    PlayerTeam(const PlayerTeam& a_team);
+    PlayerTeam(const PlayerTeam&);
 
     // Place Header for Destructor here
 
     ~PlayerTeam();
-    
+
     // Headers for accessors
     
     string getTeamName() const;
     int getTeamSize() const;
-    PlayerChar getPlayer(int playernum) const;
     
     // Headers for mutators
+    addPlayer(PlayerChar& new_player);
+    
+    deletePlayer(int index_to_delete);
     
     void setPlayer(const PlayerChar& a_player, int index);
-    
+    //Change Team Name Header
+    void setTeamName(const PlayerTeam& a_team);
     // Headers for other functions
     
-    printTeam() const;
-
-    // Place header for == operator method here
+    void printTeam() const;
+    bool operator ==(const PlayerTeam& rhs);
     
-    bool operator ==(PlayerTeam& rhs);
     
 private:
     
@@ -71,10 +60,11 @@ private:
     // The number of the players in the PlayerTeam
     int teamSize;
     
-    // A pointer to the PlayerChar array
-    // It only needs to be a pointer to an individual PlayerChar
-    // You can still use an index on it, like this:  teamArray[i]
-    PlayerChar *teamArray;   
+    // A PlayerChar Vector
+    vector<PlayerChar> *teamVector;
+    
+    //Player Team Vector?
+    //vector<PlayerTeam> *teamVector;
 };
 
 #endif /* PLAYERTEAM_H */

@@ -1,9 +1,4 @@
-/* 
- * File:   PlayerChar.h
- * Author: David
- *
- * Created on October 22, 2020
- */
+//Daniel Desforges Cs112 Fall 2020 
 
 #ifndef PLAYERCHAR_H
 #define PLAYERCHAR_H
@@ -14,11 +9,11 @@
 #include <cmath>
 #include <fstream>
 #include <ctime>
+#include <vector>
 
 using namespace std;
 
 // Declarations of data types and constants
-
 struct PlayerType {
     int strength;
     double agility;
@@ -31,8 +26,9 @@ const int NUM_TYPES = 5;
 
 class PlayerChar {
 public:
-
-    const PlayerType stdPlayer[NUM_TYPES] = {
+    
+    
+    vector<PlayerType> (stdPlayer) = {
         {700, 2.5, "Ogre"}, {300, 5.5, "Sprite"},
         {400, 4.5, "Elf"},  {600, 3.0, "Valkyrie"},
         {500, 3.5, "Magician"} };
@@ -58,13 +54,14 @@ public:
     void setStrength(int);
     void setAgility(double);
     void setRole(string);
-    increaseStrength(int pct_increase);
-    increaseAgility(int pct_increase);
+    void increaseStrength(int pct_increase);
+    void increaseAgility(int pct_increase);
     
     // Headers for other functions
-    
-    printPlayer() const;
-    
+    double getPower();
+    void printPlayer() const;
+    // copy constructor
+    copyChar(const PlayerChar& a_player);
 private:
     // member variables, data members, data fields
     // (Those all mean the same thing)
@@ -73,6 +70,9 @@ private:
     int strength;
     double agility;
     string role;
+    double power= strength*agility;
+    double teamPower;
+    
     
 };
 

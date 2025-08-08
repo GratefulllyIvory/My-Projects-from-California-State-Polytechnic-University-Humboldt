@@ -1,6 +1,6 @@
 /*---
-    CS 112 Fall 2020 - Week 09 Lab
-    C++ Classes and Methods
+    CS 112 Fall 2020 - Assignment 05
+    Using C++ Vectors
 
     David C. Tuttle
     Last Modified: 22 Oct 2020
@@ -12,6 +12,7 @@
 #include <cmath>
 #include <fstream>
 #include <ctime>
+#include <vector>
 #include "PlayerChar.h"
 
 using namespace std;
@@ -27,7 +28,7 @@ PlayerChar::PlayerChar(string init_name, string init_role) {
     name = init_name;
     strength = 0;
     // Search stdPlayer array for role
-    for (int i=0; i<NUM_TYPES; i++) {
+    for (int i=0; i<stdPlayer.size(); i++) {
         if (init_role == stdPlayer[i].role) {
             strength = stdPlayer[i].strength;
             agility = stdPlayer[i].agility;
@@ -35,7 +36,7 @@ PlayerChar::PlayerChar(string init_name, string init_role) {
         }
     }
     
-    // If no match was found in stdPlayer array
+    // If no role match was found in stdPlayer array, make it an Ogre
     if (strength == 0) {
             strength = stdPlayer[0].strength;
             agility = stdPlayer[0].agility;
@@ -56,6 +57,13 @@ PlayerChar::PlayerChar() {
     agility = stdPlayer[0].agility;
     role = stdPlayer[0].role;
 }
+
+// COPY CONSTRUCTOR NOT PROVIDED!  But if it were,
+// it would look like this:
+
+//PlayerChar::PlayerChar(const PlayerChar& a_char) {
+//    
+//}
 
 // ACCESSORS
 
@@ -93,12 +101,12 @@ void PlayerChar::setRole(string newRole) {
     role = newRole;
 };
 
-PlayerChar::increaseStrength(int pct_increase) {
+void PlayerChar::increaseStrength(int pct_increase) {
     // Check if pct_increase is within limits
     if (abs(pct_increase) > 10) {
         cout << "*** Strength change out of range ***"
              << endl;
-        return 0;
+        return;
     }
     // Calculate new strength
     int newStrength =
@@ -119,12 +127,12 @@ PlayerChar::increaseStrength(int pct_increase) {
     strength = min(newStrength, maxStrength);
 }
 
-PlayerChar::increaseAgility(int pct_increase) {
+void PlayerChar::increaseAgility(int pct_increase) {
     // Check if pct_increase is within limits
     if (abs(pct_increase) > 10) {
         cout << "*** Agility change out of range ***"
              << endl;
-        return 0;
+        return;
     }
     // Calculate new agility
     double newAgility =
@@ -144,17 +152,26 @@ PlayerChar::increaseAgility(int pct_increase) {
     // Set strength to lower of the two values
     agility = min(newAgility, maxAgility);
 }
-  
 
 // OTHER FUNCTIONS
 
+//Copy Constructor
+PlayerChar::copyChar(const PlayerChar& a_player) {
+    a_player = stdPlayer;
+}
+PlayerChar::getPower(){
+    for(int i= 0; i< teamVector.size(); i++){
+        teamPower += teamVector.power; 
+    }
+    return teamPower;
+}   
 // printPlayer: void -> void
 // Expects nothing (PlayerChar is an implicit argument)
 // Returns nothing
 // Side effects:  Prints to the screen the data member
 //     values of the PlayerChar
 
-PlayerChar::printPlayer() const {
+void PlayerChar::printPlayer() const {
     
     cout << "*** CHARACTER INFORMATION ***" << endl
          << "NAME IS     " << name << endl
@@ -162,3 +179,4 @@ PlayerChar::printPlayer() const {
          << "AGILITY IS  " << agility << endl
          << "ROLE IS     " << role << endl;
 }
+

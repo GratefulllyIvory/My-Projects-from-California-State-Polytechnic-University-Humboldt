@@ -1,13 +1,4 @@
-// CS 112 Fall 2020 - Week 09 Lab
-// Skyler Kona and Anthony Shucraft and Daniel Desforges (We got 3! Yay!)
-
-/*---
-    CS 112 Fall 2020 - Week 09 Lab
-    C++ Classes and Methods
-
-    David C. Tuttle
-    Last Modified: 22 Oct 2020
----*/
+//Daniel Desforges Cs112 Fall 2020
 
 #include <cstdlib>
 #include <iostream>
@@ -15,6 +6,8 @@
 #include <cmath>
 #include <fstream>
 #include <ctime>
+#include <valarray>
+#include <vector>
 #include "PlayerChar.h"
 #include "PlayerTeam.h"
 
@@ -31,12 +24,15 @@ using namespace std;
 //              objects of the correct size, and points the
 //              teamArray pointer to that array
 
-/*** Place code for constructor method here ***/
-
-PlayerTeam::PlayerTeam(string name, int size){
+PlayerTeam::PlayerTeam(string name, int size) {
+    if (size <= 0) {
+        cout << "*** ILLEGAL SIZE FOR TEAM! ***" << endl;
+        return;
+    }
     teamName = name;
     teamSize = size;
-    teamArray = new PlayerChar[teamSize];
+    teamVector;
+    //new vector<PlayerType> teamVector;  
 }
 
 // PlayerTeam: void -> void
@@ -48,12 +44,11 @@ PlayerTeam::PlayerTeam(string name, int size){
 //              objects of the correct size, and points the
 //              teamArray pointer to that array
 
-/*** Place code for constructor method here ***/
-
-PlayerTeam::PlayerTeam(){
+PlayerTeam::PlayerTeam() {
     teamName = DEFAULT_TEAM_NAME;
     teamSize = DEFAULT_TEAM_SIZE;
-    teamArray = new PlayerChar[teamSize];
+    teamVector;
+    //new vector<PlayerChar> teamVector; 
 }
 
 // PlayerTeam: const PlayerTeam& -> void
@@ -67,22 +62,30 @@ PlayerTeam::PlayerTeam(){
 //              PlayerChar from the passed PlayerTeam's array
 //              to the new array
 
-/*** Place code for copy constructor method here ***/
-
-PlayerTeam::PlayerTeam(const PlayerTeam& a_team){
-    teamName = a_team.getTeamName();
-    teamSize = a_team.getTeamSize();
-    teamArray = new PlayerChar[teamSize];
+PlayerTeam::PlayerTeam(const PlayerTeam& a_team) {
+    
+    teamName = "Copy of " + a_team.getTeamName();
+    //teamSize = a_team.getTeamSize();
+    teamVector;
+   // new vector<PlayerChar> teamVector; 
+    for (int i=0; i< teamVector.size(); i++) {
+        // Sigh, I can't just use this one assignment statement
+        // because my compiler tells me the default copy constructor
+        // isn't availble for PlayerChar - "would not be well-formed"
+        // teamArray[i] = a_team.teamArray[i];
+        
+        // So instead, I'm forced to use the PlayerChar methods
+        teamVector[i].setName(a_team.teamVector[i].getName());
+        teamVector[i].setStrength(a_team.teamVector[i].getStrength());
+        teamVector[i].setAgility(a_team.teamVector[i].getAgility());
+        teamVector[i].setRole(a_team.teamVector[i].getRole());
+    }
 }
 
 // DESTRUCTOR METHOD
 
-/*** Place code for destructor method here ***/
-
-PlayerTeam::~PlayerTeam(){
-    cout << "Divided array by zero" << endl;
-//    delete teamArray;
-    // remember us? we were the one with the deletion issue
+PlayerTeam::~PlayerTeam() {
+    delete teamVector;
 }
 
 // ACCESSORS
@@ -94,20 +97,25 @@ PlayerTeam::~PlayerTeam(){
 string PlayerTeam::getTeamName() const {
     return teamName;
 }
-PlayerChar PlayerTeam::getPlayer(int playernum) const{
-    return teamArray[playernum];
-}
 
 // getTeamSize: void -> int
 // Expects nothing
 // Returns the PlayerTeam's size
 
 int PlayerTeam::getTeamSize() const {
-    return teamSize;
+    return teamVector.size();
 }
 
 // MUTATORS
-
+PlayerTeam::addPlayer(PlayerChar& new_player){
+    teamVector->push_back(new_player);
+}
+PlayerTeam::deletePlayer(int index_to_delete){
+    teamVector->pop_back(index_to_delete);
+}
+PlayerTeam::setTeamName(const PlayerTeam& a_team){
+    a_team = teamName;
+}
 // setPlayer: PlayerChar& const, int -> void
 // Expects a PlayerChar and an index in the PlayerTeam array
 // Returns nothing
@@ -115,29 +123,31 @@ int PlayerTeam::getTeamSize() const {
 //              teamArray at that index
 
 void PlayerTeam::setPlayer(const PlayerChar& a_player, int index) {
-    if (index < 0 || index >= teamSize) {
-        cout << "*** Player not set - index out of bounds!" << endl;
+    if (index < 0 || index >= teamVector.size()) {
+        cout << "*** Player not set - index " << index 
+             << " out of bounds!" << endl;
         return;
     }
-    teamArray[index].setName(a_player.getName());
-    teamArray[index].setStrength(a_player.getStrength());
-    teamArray[index].setAgility(a_player.getAgility());
-    teamArray[index].setRole(a_player.getRole());
+    teamVector[index].setName(a_player.getName());
+    teamVector[index].setStrength(a_player.getStrength());
+    teamVector[index].setAgility(a_player.getAgility());
+    teamVector[index].setRole(a_player.getRole());
 }
 
 // OPERATOR OVERLOADING METHODS
 
-/*** Place code for == operator method here ***/
-
-bool PlayerTeam::operator ==(PlayerTeam& rhs){
-    bool stillequal = (teamSize == rhs.getTeamSize());
-    for (int i = 0; i < teamSize; i++){
-        if (teamArray[i].getRole() != rhs.teamArray[i].getRole()){
-            stillequal = false;
-        }
+bool PlayerTeam::operator ==(const PlayerTeam& rhs) {
+    // If teams aren't the same size, they can't be equal!
+    if (teamVector.getPower() - rhs.getPower() <= 100)
+        return true;
+    else
+        return false;
+   
     }
+    
+    // If we get to this point, then all values match, and they're equal
+    return true;
 }
-
 // OTHER METHODS
 
 // printTeam: void -> void
@@ -145,11 +155,11 @@ bool PlayerTeam::operator ==(PlayerTeam& rhs){
 // Returns nothing
 // Side effects:  Prints to the screen the team info
 
-PlayerTeam::printTeam() const {
+void PlayerTeam::printTeam() const {
     
     cout << "*** TEAM INFORMATION ***" << endl
          << "TEAM NAME IS     " << teamName << endl;
-    for (int i=0; i<teamSize; i++)
-        teamArray[i].printPlayer();
-
+    for (int i=0; i<teamVector.size(); i++)
+        teamVector[i].printPlayer();
+    return;
 }

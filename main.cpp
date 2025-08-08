@@ -1,10 +1,5 @@
-/*---
-    CS 112 Fall 2020 - Week 14 Lab
- Linked List Implementation in C++
+//Daniel Desforges Cs112 Fall 2020t Modified: 22 Oct 2020
 
-    David C. Tuttle
-    Last Modified: 01 Dec 2020
----*/
 
 #include <cstdlib>
 #include <iostream>
@@ -12,94 +7,64 @@
 #include <cmath>
 #include <fstream>
 #include <ctime>
+#include "PlayerChar.h"
+#include "PlayerTeam.h"
 #include <vector>
-#include "Node.h"
-#include "LinkedList.h"
 
 using namespace std;
 
 int main() {
     cout << boolalpha;
     
-    // Node* p,q,r; // THIS IS WRONG SYNTAX!
+    cout << "*** CREATING PLAYERCHARS *** " << endl;
     
-    Node *pPtr, *qPtr, *rPtr;
+    // Let's create PlayerChars for our PlayerTeams
     
-    pPtr = new Node;
-    
-    qPtr = new Node(4, pPtr);
-    
-    rPtr = new Node(6, qPtr);
-    
-    // Now we DO have a LinkedList class to take care
-    // of the list, we'll do it using the methods!
-    
-    // First, create the list
-    
-    LinkedList* myList;
-    myList = new LinkedList;
-    
-    // Print the current list
-    cout << "WALKING THROUGH THE NEW EMPTY LIST" << endl;
-    
-    myList->printList();
-    
-    myList->addNode(pPtr);
-    myList->addNode(qPtr);
-    myList->addNode(rPtr);
-
-    // Now, let's insert a new Node nPtr into the list
-    // First, declare and allocate a new Node
-    Node *nPtr;
-    nPtr = new Node(8, NULL);
-    myList->addNode(nPtr);
+    PlayerChar *fred = new PlayerChar();
+    PlayerChar *wilma = new PlayerChar("Wilma", "Elf");
+    PlayerChar *barney = new PlayerChar("Barney", "Magician");
+    PlayerChar *betty = new PlayerChar("Betty", "Valkyrie");
         
-    // Now let's "walk" through the list
+    cout << "*** TESTING THE PLAYERTEAM METHODS *** " << endl;
     
-    cout << "WALKING THROUGH THE LIST AFTER INSERTIONS AT TAIL" << endl;
+    // TESTING FIRST CONSTRUCTOR
+    PlayerTeam *team_1 = new PlayerTeam("TEAM 1", 2);
+    team_1->setPlayer(*fred, 0);
+    team_1->setPlayer(*barney, 1);
+    team_1->printTeam();
+    cout << endl;
     
-    myList->printList();
+    // TESTING SECOND CONSTRUCTOR
+    PlayerTeam *team_2 = new PlayerTeam();
+    team_2->setPlayer(*fred, 0);
+    team_2->setPlayer(*wilma, 1);
+    team_2->setPlayer(*barney, 2);
+    team_2->printTeam();
     
-   
-    // WEEK 14 LAB - the removeNode method
-    // The removeNode method will "walk" through the list to 
-    // find a node with a particular value, then remove that
-    // node from the list.  NOTE: This node could be at the
-    // head, or in the interior of the list, or at the tail!
+    // TESTING COPY CONSTRUCTOR
+    PlayerTeam *team_3 = new PlayerTeam(*team_1);
+    team_3->printTeam();
     
-    // Uncomment this code to perform your tests
+    // TESTING DESRUCTOR
+    PlayerTeam *team_4 = new PlayerTeam("TEAM 4",1);
+    team_4->setPlayer(*betty, 0);
+    team_4->printTeam();
     
-//    cout << "Result of deleting node containing 999: "
-//         << myList->deleteNode(999) << endl;
-//    cout << "List is now: ";
-//    myList->printList();
-//
-//    cout << "Result of deleting node containing 6: "
-//         << myList->deleteNode(6) << endl;
-//    cout << "List is now: ";
-//    myList->printList();
-//
-//    cout << "Result of deleting node containing 0: "
-//         << myList->deleteNode(0) << endl;
-//    cout << "List is now: ";
-//    myList->printList();
-//
-//    cout << "Result of deleting node containing 8: "
-//         << myList->deleteNode(8) << endl;
-//    cout << "List is now: ";
-//    myList->printList();
-//
-//    cout << "Result of deleting node containing 4: "
-//         << myList->deleteNode(4) << endl;
-//    cout << "List is now: ";
-//    myList->printList();
-
-    // Clean up what you allocate!
+    delete team_4;
     
-    delete nPtr, pPtr, qPtr, rPtr;
-    delete myList;
+    // TESTING == OPERATOR METHOD
     
+    cout << "TEAM 1 SHOULD *NOT* EQUAL TEAM2" << endl;
+    if (*team_1 == *team_2)
+        cout << "TEAM 1 EQUALS TEAM 2!" << endl;
+    else
+        cout << "TEAM 1 DOES NOT EQUAL TEAM 2!" << endl;
+    
+    cout << "TEAM 1 SHOULD EQUAL TEAM3" << endl;
+    if (*team_1 == *team_3)
+        cout << "TEAM 1 EQUALS TEAM 3!" << endl;
+    else
+        cout << "TEAM 1 DOES NOT EQUAL TEAM 3!" << endl;
     
     return EXIT_SUCCESS;
-     
 }
