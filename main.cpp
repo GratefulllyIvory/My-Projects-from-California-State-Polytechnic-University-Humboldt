@@ -1,213 +1,105 @@
 /*---
-    CS 111 - Week 14 Lecture 2 - intro to arrays!
-    (and void functions!) (continued)
+    CS 112 Fall 2020 - Week 14 Lab
+ Linked List Implementation in C++
 
-    by: Sharon Tuttle
-    modified by: David Tuttle
-    last modified: 2020-09-03
+    David C. Tuttle
+    Last Modified: 01 Dec 2020
 ---*/
 
 #include <cstdlib>
 #include <iostream>
 #include <string>
 #include <cmath>
-#include <fstream>   // ADD THIS to do file input and/or output
+#include <fstream>
+#include <ctime>
+#include <vector>
+#include "Node.h"
+#include "LinkedList.h"
 
 using namespace std;
 
-/*
- * signature: show_grades: double[] int -> void 
- * purpose: expects an array of grades and its size,
- *     and has the side-effect of printing those
- *     grades to the screen, one per line,
- *     and returns NOTHING.
- * tests:
- *     if you have:
- * 
- *     double quiz1[3] = {99.9, 88.8, 91.7};
- *
- *     and I call:
- *      
- *     show_grades(quiz1, 3);
- * 
- *     the following should be printed to screen:
-99.9
-88.8
-91.7
- * 
- *     if you have:
- * 
- *     double final_exams[4] = {100, 100, 100, 100};
- * 
- *     show_grades(final_exams, 4);
- * 
- * the following should be printed to screen:
-100
-100
-100
-100
- * 
- ===*/
-
-void show_grades(double grades[], int size)
-{
-    // int i = 0;
-    
-    // print to the screen each grade in grades,
-    //     on its own line
-
-    // while (i < size)
-    
-    for(int i=0; i<size; i++)
-    {
-        cout << grades[i] << endl;
-        
-        // i++;
-    }
-}
-
-/*
- * signature: avg_grades: double[] int -> double
- * purpose: expects an array of grades and its size,
- *     and returns the average of the grades in that
- *     array
- * tests:
- *     if you have:
- *         double quizzes[5] = {98.5, 67.2, 73, 34.8, 92.7};
- * 
- *         avg_grades(quizzes, 5) == 
- *              (98.5 + 67.2 + 73 + 34.8 + 92.7)/5
- * 
- *     if you have:
- *         double labs[3] = {0, 50, 100};
- * 
- *         avg_grades(labs, 3) == 50 
- * 
- *         avg_grades(labs, 0) == 0
- *          
- */
-
-double avg_grades(double my_grades[], int size)
-{
-    double sum = 0;
-    
-    for (int i = 0; i < size; i++)
-    {
-        sum += my_grades[i];
-    }
-    
-    // now determine the average (safely)
-    
-    if (size != 0)
-    {
-        return sum / size;
-    }
-    else
-    {
-        // size is 0! Just return 0 in that case
-        
-        return 0;
-    }
-}
-
-
-
-int main()
-{
+int main() {
     cout << boolalpha;
+    
+    // Node* p,q,r; // THIS IS WRONG SYNTAX!
+    
+    Node *pPtr, *qPtr, *rPtr;
+    
+    pPtr = new Node;
+    
+    qPtr = new Node(4, pPtr);
+    
+    rPtr = new Node(6, qPtr);
+    
+    // Now we DO have a LinkedList class to take care
+    // of the list, we'll do it using the methods!
+    
+    // First, create the list
+    
+    LinkedList* myList;
+    myList = new LinkedList;
+    
+    // Print the current list
+    cout << "WALKING THROUGH THE NEW EMPTY LIST" << endl;
+    
+    myList->printList();
+    
+    myList->addNode(pPtr);
+    myList->addNode(qPtr);
+    myList->addNode(rPtr);
 
-    // testing show_grades
+    // Now, let's insert a new Node nPtr into the list
+    // First, declare and allocate a new Node
+    Node *nPtr;
+    nPtr = new Node(8, NULL);
+    myList->addNode(nPtr);
+        
+    // Now let's "walk" through the list
     
-    cout << endl;
-    cout << "*** Testing show_grades ***" << endl;
-
-    double quiz1[3] = {99.9, 88.8, 91.7};
+    cout << "WALKING THROUGH THE LIST AFTER INSERTIONS AT TAIL" << endl;
     
-    cout << "SHOULD see 99.9, 88.8, 91.7: " << endl;
-    show_grades(quiz1, 3);
+    myList->printList();
     
-    double final_exams[4] = {100, 100, 100, 100};
+   
+    // WEEK 14 LAB - the removeNode method
+    // The removeNode method will "walk" through the list to 
+    // find a node with a particular value, then remove that
+    // node from the list.  NOTE: This node could be at the
+    // head, or in the interior of the list, or at the tail!
     
-    cout << "SHOULD see four 100s: " << endl;
-    show_grades(final_exams, 4);
+    // Uncomment this code to perform your tests
     
-    cout << "*** Testing avg_grades ***" << endl;
-    double quizzes[5] = {98.5, 67.2, 73, 34.8, 92.7};
- 
-    cout << (avg_grades(quizzes, 5) == 
-              (98.5 + 67.2 + 73 + 34.8 + 92.7)/5) << endl;
-    
-    double labs[3] = {0, 50, 100};
-    
-    cout << (avg_grades(labs, 3) == (0.0 + 50.0 + 100.0)/3) << endl;
-       
-    // playing further with arrays
-    
-    const int NUM_STUDENTS = 5;
-    double quiz_grades[NUM_STUDENTS];
-    
-    int index = 0;
-
-    cout << endl;
-    cout << "Please enter the quiz grades of all "
-         << NUM_STUDENTS << " students: " << endl;
-    cout << endl;
-
-    // ask the user to enter NUM_STUDENTS' quiz grades,
-    //     and store them in the array quiz_grades
-
-    while (index < NUM_STUDENTS)
-    {
-        cout << "enter next grade: ";
-        cin >> quiz_grades[index];
-        index = index + 1;
-    }
-    
-    cout << endl;
-    cout << "Thanks! you entered: " << endl;
-    show_grades(quiz_grades, NUM_STUDENTS);
-    
-    cout << endl;
-    cout << "The average of these grades is: "
-         << avg_grades(quiz_grades, NUM_STUDENTS)
-         << endl;
-    
-//    // I want to save these grades for later
-//    
-//    ofstream my_out_stream;
-//    my_out_stream.open("looky.txt");
-//    
-//    for (int i=0; i < NUM_STUDENTS; i++)
-//    {
-//        my_out_stream << quiz_grades[i] << endl; 
-//    }
-//    
-//    my_out_stream.close();
-//    
-//    // I want to read the file's contents
-//    
-//    ifstream my_in_stream;
-//    my_in_stream.open("looky.txt");
-//    
-//    // safer way: try to read the first thing
-//    
-//    double grade_seen;
-//    my_in_stream >> grade_seen;
-//    
-//    // and while you don't FAIL, keep reading
-//    // (method eof returns true of you failed to read
-//    //    because you hit the end of file)
-//    
-//    while (my_in_stream.eof() == false)
-//    {
-//        cout << "I read: " << grade_seen << endl;
-//        
-//        my_in_stream >> grade_seen;
-//    }
+//    cout << "Result of deleting node containing 999: "
+//         << myList->deleteNode(999) << endl;
+//    cout << "List is now: ";
+//    myList->printList();
 //
-//    my_in_stream.close();
-//    
-//    cout << endl;
+//    cout << "Result of deleting node containing 6: "
+//         << myList->deleteNode(6) << endl;
+//    cout << "List is now: ";
+//    myList->printList();
+//
+//    cout << "Result of deleting node containing 0: "
+//         << myList->deleteNode(0) << endl;
+//    cout << "List is now: ";
+//    myList->printList();
+//
+//    cout << "Result of deleting node containing 8: "
+//         << myList->deleteNode(8) << endl;
+//    cout << "List is now: ";
+//    myList->printList();
+//
+//    cout << "Result of deleting node containing 4: "
+//         << myList->deleteNode(4) << endl;
+//    cout << "List is now: ";
+//    myList->printList();
+
+    // Clean up what you allocate!
+    
+    delete nPtr, pPtr, qPtr, rPtr;
+    delete myList;
+    
     
     return EXIT_SUCCESS;
+     
 }

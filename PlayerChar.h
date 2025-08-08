@@ -1,15 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /* 
  * File:   PlayerChar.h
  * Author: David
  *
- * Created on September 24, 2020, 11:27 AM
+ * Created on October 22, 2020
  */
+
+#ifndef PLAYERCHAR_H
+#define PLAYERCHAR_H
 
 #include <cstdlib>
 #include <iostream>
@@ -20,47 +17,57 @@
 
 using namespace std;
 
-#ifndef PLAYERCHAR_H
-#define PLAYERCHAR_H
+// Declarations of data types and constants
 
-// PlayerChar will be built from the idea from last
-// lecture that introduced the CharSheet struct
+struct PlayerType {
+    int strength;
+    double agility;
+    string role;
+};
 
-// struct CharSheet
-// {
-//    string name;
-//    int    strength;
-//    double agility;
-//    string role;    
-// };
+const int NUM_TYPES = 5;
+
+// Definition of class PlayerChar
 
 class PlayerChar {
 public:
+
+    const PlayerType stdPlayer[NUM_TYPES] = {
+        {700, 2.5, "Ogre"}, {300, 5.5, "Sprite"},
+        {400, 4.5, "Elf"},  {600, 3.0, "Valkyrie"},
+        {500, 3.5, "Magician"} };
+
     // Headers for constructors
     
-    PlayerChar(string init_name, int init_strength,
-                       double init_agility, string init_role);
-    
     PlayerChar(string init_name, string init_role);
+    
+    PlayerChar(string init_name);
     
     PlayerChar();
     
     // Headers for accessors
     
-    string get_name() const;
+    string getName() const;
+    int getStrength() const;
+    double getAgility() const;
+    string getRole() const;
     
     // Headers for mutators
     
-    set_name(string new_name);
+    void setName(string);
+    void setStrength(int);
+    void setAgility(double);
+    void setRole(string);
+    increaseStrength(int pct_increase);
+    increaseAgility(int pct_increase);
     
     // Headers for other functions
     
-    print_player_info();
-    
+    printPlayer() const;
     
 private:
     // member variables, data members, data fields
-    // Those all mean the same thing
+    // (Those all mean the same thing)
     
     string name;
     int strength;

@@ -8,93 +8,52 @@
  * File:   Node.h
  * Author: David
  *
- * Modified on February 01, 2021
+ * Created on December 1, 2020, 8:46 AM
  */
 
 #ifndef NODE_H
 #define NODE_H
 
+#include <cstdlib>
+#include <iostream>
+#include <string>
+#include <cmath>
+#include <fstream>
+#include <ctime>
+#include <vector>
 
-/*-----
-  class: Node
+// For purposes of flexibility, it would make sense for the
+// programmer to allow this code to be a node of whatever
+// data type we want to put into the "payload"
 
-  purpose: could be used to implement a node within a
-           singly-linked list; each node instance has
-           two data fields, one holding data and one holding
-           the address of the next node instance in a list
+// The typedef statement map a data type to an identifier
+// Similar in concept to declaring a constant identifier
 
-           valueType should be set to be the desired type
-           for the data to be stored within each node instance's
-           data field
+// This statement allows the programmer to use "T" as the
+// data type for the Node payload. "T" is the traditional
+// data type identifier used in the Standard Template Library
+// (as mentioned in Chapter 18 of the Savitch book!)
 
-  constructors: has 4 constructors:
-           *   a no-argument constructor, which sets the
-	       new Node instance's data field to the default for
-	       its valueType, and sets its link field to NULL
-           *   two one-argument contructors -- 
-               *   one expects a valueType value, and sets the new Node
-                   instance's data field to that given value, and sets
-                   its link field to NULL,
-
-	       *   and the other expects a *Node value, and sets the new
-                   Node instance's data field to the default for its
-                   valueType, and sets its link field to the given
-                   *Node address
-
-           *   a two-argument constructor, which expects a
-               valueType value and a *Node value, and sets
-
-  getters: getData - returns the value in the node' data field
-
-           getLink - returns the address of the next node in
-                     a list of these nodes
-      
-  setters: setData - expects a value of type valueType,
-                     returns nothing, and has the side-effect of
-                     setting the node's data field to the given
-		     value
-
-           setLink - expects a value of type *Node,
-                     returns nothing, and has the side-effect of
-                     setting the node's link field to the given
-                     address-of-a-Node
-
-  written by: Sharon Tuttle
-  modified by: David C. Tuttle
-  last modified: 01 Feb 2021
- -----*/
-
-typedef double valueType;
+typedef int T;
 
 class Node {
-    public:
-        // what type of data is stored in this node? 
+public:
+    // constructors
+    Node();
+    Node(T initVal, Node *initNext);
 
+    // accessors
+    T getData() const;
+    Node *getNext() const;
 
-        // constructors
-
-        Node();
-        Node(Node *initLink);
-        Node(const valueType& initData);
-        Node(const valueType& initData, 
-             Node *initLink);
- 
-        // getters - methods to GRAB data fields
-
-        valueType   getData() const;
-        Node* getLink() const;
-        Node*       getLink();
-
-        // setters - methods to SET data fields
-
-        void setData(const valueType& newData);
-        void setLink(Node* newLink);
-
-    private:
-        valueType dataField;
-        Node      *linkField;
+    // mutators
+    void setData(T newValue);
+    void setNext(Node *newNext);    
+    
+private:
+    T data;
+    Node *next;
 };
-
 
 #endif /* NODE_H */
 
