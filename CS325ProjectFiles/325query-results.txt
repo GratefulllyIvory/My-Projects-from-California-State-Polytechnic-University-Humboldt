@@ -1,0 +1,77 @@
+-- Daniel Desforges CS325 Fall 2020 12/11/2020
+-- Query 1 Avg Item Sales
+
+AverageItemCost                                                                 
+---------------                                                                 
+     943622.962                                                                 
+
+-- Query 2 EmployeeComissionTotal
+
+Employee: 5% Commissions                                                        
+------------------------                                                        
+              424630.333                                                        
+
+-- Query 3 String Violin Instrument Locations With String Value
+
+STRINGTYPE           STOREDLOCATION                           ISSTRING          
+-------------------- ---------------------------------------- ---------------   
+Steel                BackRoom                                 Yes               
+Nylon                Front Window                             Yes               
+Catgut               UpperShelf                               Yes               
+
+-- Query 4 String Guitar Instrument Locations with InstrumentID
+
+STRINGTYPE           STOREDLOCATION                           INSTRUMENTID      
+-------------------- ---------------------------------------- ------------      
+Steel                FrontRoom                                          16      
+Nickle               BackRoom                                           17      
+Nylon                Backroom                                           18      
+Catgut               UpperShelf                                         20      
+
+-- Query 5 Wind Bugals Instrument Locations with Wind Value
+
+STOREDLOCATION                           ISWIND          INSTRUMENTID           
+---------------------------------------- --------------- ------------           
+BackRoom                                 Yes                       11           
+BackRoom                                 Yes                       14           
+Attic                                    Yes                       15           
+BackRoom                                 Yes                       17           
+
+-- Query 6 Wind Tubas Instrument Locations with WindType
+
+STOREDLOCATION                           WINDTYPE             INSTRUMENTID      
+---------------------------------------- -------------------- ------------      
+Front Window                             Indirect                       13      
+Backroom                                 Indirect                       18      
+UpperShelf                               Indirect                       20      
+
+-- Query 7 Quantity at StoredLocation
+
+COUNT(INSTRUMENTID) STOREDLOCATION                                              
+------------------- ----------------------------------------                    
+                  1 FrontRoom                                                   
+                  1 UpperShelf                                                  
+                  1 MiddleCase                                                  
+                  2 Attic                                                       
+                  1 Backroom                                                    
+                  3 BackRoom                                                    
+                  1 Front Window                                                
+
+7 rows selected.
+
+-- Query 8 Pricing Of Antiques vs Non Antiques
+
+INSTRUMENTID ISANTIQUE  PAYMENTAMOUNT                                           
+------------ ---------- -------------                                           
+          11 Yes           3240120.34                                           
+          12 No               10000.1                                           
+          13 Yes            102030.14                                           
+          14 Yes            240142.34                                           
+          15 No                368.43                                           
+          16 Yes             11142.45                                           
+          17 Yes            152432.53                                           
+          18 Yes           2221115.22                                           
+          19 Yes           2515255.11                                           
+
+9 rows selected.
+

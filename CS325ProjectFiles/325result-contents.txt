@@ -1,0 +1,139 @@
+Daniel Desforges CS325 Fall2020 12/5/2020
+CUSTOMERID NAME            PHONENUMBER PURCHASES                                
+---------- --------------- ----------- --------------------                     
+         1 Michael          9518274627 Steel String Guitar                      
+         2 Jane             9091284253 Nylon String Violin                      
+         3 Joe              9719239032 Standard String Harp                     
+         4 Alice            7428912322 XL FrenchHorn                            
+         5 Bob              8237286456 Red Bongos                               
+         6 Jameson          9285391092 Green Snares                             
+         7 Jack             9710293218 Alloy String Guitar                      
+         8 Brian            9173245832 Blue BaseDrum                            
+         9 Thomas           8721245760 Small Tuba                               
+        10 Vik              3256098341 Standard Bugal                           
+
+10 rows selected.
+
+
+INSTRUMENTID PURCHASEID INSTRUMENTTYPE  ISANTIQUE                               
+------------ ---------- --------------- ----------                              
+          11          1 String          Yes                                     
+          12          2 String          No                                      
+          13          3 String          Yes                                     
+          14          4 Precussion      Yes                                     
+          15          5 Precussion      No                                      
+          16          6 Precussion      Yes                                     
+          17          7 Wind            Yes                                     
+          18          8 Wind            Yes                                     
+          19          9 Wind            Yes                                     
+          20         10 Wind            No                                      
+
+10 rows selected.
+
+
+OPERATORID RECIEVEDPAYMENTID PAYMENTAMOUNT OPERATORNAME                         
+---------- ----------------- ------------- ---------------                      
+        21                11    3240120.34 Dante                                
+        22                12       10000.1 Virgil                               
+        23                13     102030.14 Dante                                
+        24                14     240142.34 Dante                                
+        25                15        368.43 Virgil                               
+        26                16      11142.45 Dante                                
+        27                17     152432.53 Dante                                
+        28                18    2221115.22 Virgil                               
+        29                19    2515255.11 Dante                                
+
+9 rows selected.
+
+
+INSTRUMENTID STRINGTYPE           STOREDLOCATION                                
+------------ -------------------- ----------------------------------------      
+          12 Nickle               Attic                                         
+          13 Nylon                Front Window                                  
+          14 Bronze               BackRoom                                      
+          15 Steel                Attic                                         
+          16 Steel                FrontRoom                                     
+          17 Nickle               BackRoom                                      
+          18 Nylon                Backroom                                      
+          19 Brass                MiddleCase                                    
+          20 Catgut               UpperShelf                                    
+          11 Steel                BackRoom                                      
+
+10 rows selected.
+
+
+INSTRUMENTID ISSTRING        STRINGS                                            
+------------ --------------- ----------------------------------------           
+          11 Yes             Steel                                              
+          13 Yes             Nylon                                              
+          20 Yes             Catgut                                             
+
+
+INSTRUMENTID ISSTRING        STRINGS                                            
+------------ --------------- ----------------------------------------           
+          16 Yes             Steel                                              
+          17 Yes             Nickle                                             
+          18 Yes             Nylon                                              
+          20 Yes             Catgut                                             
+
+
+no rows selected
+
+
+INSTRUMENTID WINDTYPE             STOREDLOCATION                                
+------------ -------------------- ----------------------------------------      
+          11 Direct               BackRoom                                      
+          12 Standard             Attic                                         
+          13 Indirect             Front Window                                  
+          14 Direct               BackRoom                                      
+          15 Direct               Attic                                         
+          16 Standard             FrontRoom                                     
+          17 Direct               BackRoom                                      
+          18 Indirect             Backroom                                      
+          19 Standard             MiddleCase                                    
+          20 Indirect             UpperShelf                                    
+
+10 rows selected.
+
+
+no rows selected
+
+
+INSTRUMENTID ISWIND          WINDTYPE                                           
+------------ --------------- ----------------------------------------           
+          11 Yes             Direct                                             
+          14 Yes             Direct                                             
+          15 Yes             Direct                                             
+          17 Yes             Direct                                             
+
+
+INSTRUMENTID PRECUSSIONTYPE       STOREDLOCATION                                
+------------ -------------------- ----------------------------------------      
+          11 Direct               BackRoom                                      
+          12 Standard             Attic                                         
+          13 Indirect             Front Window                                  
+          14 Direct               BackRoom                                      
+          15 Direct               Attic                                         
+          16 Standard             FrontRoom                                     
+          17 Direct               BackRoom                                      
+          18 Indirect             Backroom                                      
+          19 Standard             MiddleCase                                    
+          20 Indirect             UpperShelf                                    
+
+10 rows selected.
+
+
+INSTRUMENTID ISPRECUSSION    COLOR                                              
+------------ --------------- ----------------------------------------           
+          11 Direct          Blue                                               
+          14 Direct          Black                                              
+          15 Direct          Red                                                
+          17 Direct          Green                                              
+
+
+INSTRUMENTID ISPRECUSSION    COLOR                                              
+------------ --------------- ----------------------------------------           
+          18 Indirect        Purple                                             
+          20 Indirect        Red                                                
+          13 Indirect        Yellow                                             
+

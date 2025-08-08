@@ -1,0 +1,18 @@
+-- Daniel Desforges CS325 Fall 2020 12/11/2020
+Report1 CustomerPurchase List
+
+INSTRUMENTID PURCHASES            PurchasedBy     PHONENUMBER                   
+------------ -------------------- --------------- -----------                   
+          14 XL FrenchHorn        Alice            7428912322                   
+          15 Red Bongos           Bob              8237286456                   
+          18 Blue BaseDrum        Brian            9173245832                   
+          17 Alloy String Guitar  Jack             9710293218                   
+          16 Green Snares         Jameson          9285391092                   
+          12 Nylon String Violin  Jane             9091284253                   
+          13 Standard String Harp Joe              9719239032                   
+          11 Steel String Guitar  Michael          9518274627                   
+          19 Small Tuba           Thomas           8721245760                   
+          20 Standard Bugal       Vik              3256098341                   
+
+10 rows selected.
+

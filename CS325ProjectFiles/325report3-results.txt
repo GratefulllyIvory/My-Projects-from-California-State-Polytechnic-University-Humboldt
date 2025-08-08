@@ -1,0 +1,45 @@
+-- Daniel Desforges CS 325 Fall 2020 12/11/2020
+-- Compute syntax correct however not computing for set only computing individually
+-- Report 3 Highest Transaction By Employees
+
+RECIEVEDPAYMENTID PAYMENTAMOUNT OPERATORNAME                                    
+----------------- ------------- ---------------                                 
+               11    3240120.34 Dante                                           
+***************** -------------                                                 
+Highest Trasactio    3240120.34                                                 
+                                                                                
+               17     152432.53 Dante                                           
+***************** -------------                                                 
+Highest Trasactio     152432.53                                                 
+                                                                                
+               13     102030.14 Dante                                           
+***************** -------------                                                 
+Highest Trasactio     102030.14                                                 
+                                                                                
+               14     240142.34 Dante                                           
+***************** -------------                                                 
+Highest Trasactio     240142.34                                                 
+                                                                                
+               19    2515255.11 Dante                                           
+***************** -------------                                                 
+Highest Trasactio    2515255.11                                                 
+                                                                                
+               16      11142.45 Dante                                           
+***************** -------------                                                 
+Highest Trasactio      11142.45                                                 
+                                                                                
+               18    2221115.22 Virgil                                          
+***************** -------------                                                 
+Highest Trasactio    2221115.22                                                 
+                                                                                
+               12       10000.1 Virgil                                          
+***************** -------------                                                 
+Highest Trasactio       10000.1                                                 
+                                                                                
+               15        368.43 Virgil                                          
+***************** -------------                                                 
+Highest Trasactio        368.43                                                 
+                                                                                
+
+9 rows selected.
+

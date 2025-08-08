@@ -1,0 +1,53 @@
+-- Daniel Desforges CS325 FAll 2020 12/11/2020
+Complete List Of Antique Shop Instrument
+StringInstruments
+
+INSTRUMENTID CONCAT(ISANTIQUE,STRINGTYPE)                                       
+------------ ------------------------------                                     
+          11 YesSteel                                                           
+          12 NoNickle                                                           
+          13 YesNylon                                                           
+          14 YesBronze                                                          
+          15 NoSteel                                                            
+          16 YesSteel                                                           
+          17 YesNickle                                                          
+          18 YesNylon                                                           
+          19 YesBrass                                                           
+          20 NoCatgut                                                           
+
+10 rows selected.
+
+-- WindInstruments
+
+INSTRUMENTID CONCAT(ISANTIQUE,WINDTYPE)                                         
+------------ ------------------------------                                     
+          11 YesDirect                                                          
+          12 NoStandard                                                         
+          13 YesIndirect                                                        
+          14 YesDirect                                                          
+          15 NoDirect                                                           
+          16 YesStandard                                                        
+          17 YesDirect                                                          
+          18 YesIndirect                                                        
+          19 YesStandard                                                        
+          20 NoIndirect                                                         
+
+10 rows selected.
+
+-- PrecussionInstruments
+
+INSTRUMENTID CONCAT(ISANTIQUE,PRECUSSIONTYP                                     
+------------ ------------------------------                                     
+          11 YesDirect                                                          
+          12 NoStandard                                                         
+          13 YesIndirect                                                        
+          14 YesDirect                                                          
+          15 NoDirect                                                           
+          16 YesStandard                                                        
+          17 YesDirect                                                          
+          18 YesIndirect                                                        
+          19 YesStandard                                                        
+          20 NoIndirect                                                         
+
+10 rows selected.
+
