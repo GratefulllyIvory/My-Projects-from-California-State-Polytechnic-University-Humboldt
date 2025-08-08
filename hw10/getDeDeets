@@ -1,0 +1,24 @@
+#!/bin/bash
+#Daniel Desforges
+
+case $1 in
+	*.txt)
+		echo "word count in file:"
+		wc $1
+		;;
+	*.sh)
+		find . $1
+		;;
+	*.gz)
+		gzip -l $1
+		;;
+	*.tar)
+		tar tf $1
+		;;
+	if [ -d $1]
+	then
+		echo "Num of files ${#1}"
+	elif
+		echo "long list"
+	fi
+esac

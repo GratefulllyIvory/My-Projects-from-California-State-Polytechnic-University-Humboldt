@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset= "utf-8">
+	<title>HW #6_2-Daniel Desforges </title>
+</head>
+<body>
+<script type= "text/javascript">
+	function scoreCard()
+	{
+		var result = document.getElementById("output");
+		var wolfq = document.getElementsByName("wolfq");
+		var oceanq = document.getElementsByName("oceanq");
+		var alaskaq = document.getElementsByName("alaskaq");
+		
+		//verify if answered
+		var isComp = true;
+		var wolfComp = false;
+		var oceanComp = false;
+		var textboxComp = false;
+		
+		for(var i = 0; i < wolfq.length; i++)
+		{
+			if(wolfq[i].checked == true)
+			{
+				wolfComp = true;
+			}
+		}
+		for(var i = 0; i< oceanq.length; i++)
+		{
+			if(oceanq[i].checked == true)
+			{
+				oceanComp == true;
+			}
+		
+		}
+		for(var i = 0; i < alaskaq.length; i++)
+		{
+			if(alaskaq[i].checked == true)
+			{
+				alaskaq = true;
+			}
+		}
+		if(wolfComp == false || oceanComp == false || alaskaq == false)
+		{
+			isComp == false;
+		}
+		
+		if(isComp == false)
+		{
+			score.innerHTML = "Retry with all answers checked";
+			score.style.color = "purple";
+		}
+		else
+		{
+			//Calculate scores
+			var score = 100;
+			if(wolfq[1].checked == false)
+			{
+				score -= 20;
+			}
+			if(oceanq[1].checked == false)
+			{
+				score -= 20;
+			}
+			if(alaskaq != "dark")
+			{
+				score -= 20;
+			}
+			
+			//Score Display
+			result.innerHTML = "Congrats!! Your score is:" + score; 
+			result.color = "blue";
+		}
+	}
+		function start()
+		{
+			var submitButton = document.getElementById("submitButton");
+			submitButton.addEventListener("click", scoreCard, false);
+			var resetButton = document.getElementById("resetButton");
+			var result = document.getElementById("output");
+			result.innerHTML = "";
+			
+		}
+		window.addEventListener("load", start, false);
+</script>
+<!-- quiz -->
+<body style= "padding-right" 100px">
+	<form method ="post" action="quiz.php" style= "padding: 20px; font-family: Verdana, text-align; font-size 20pt; width: 600px">
+		<h2 style="padding: 100px; text-align; color: red">TrivialJavaScriptQuiz</h2>
+		<hr style= "width: 250px"/>
+		<p>1)Johann Wolfgang von Goethe not a painter. (T/F)</p>
+			<input type="radio" name="wolfq" id="wolfq1">True
+			<input type="radio" name="wolfq" id="wolfq2">False</br>
+		</p>
+		<p>2) The deepest parts of the ocean are taller than the highest points of the earth.(T/F)
+			<input type="radio" name="oceanq" id="oceanq2">True	
+			<input type="radio" name="oceanq" id="oceanq2">False<br>
+		</p>
+		<p>3)Alaskas _<input type="text" id="dark" maxlength="25">_ nights are also called polar nights</p>
+		<input type="button" id="submitButton" value="SubmitQuiz"/>
+		<input type="button" id="resetButton" value="ResetQuiz"/>
+		</p>
+		<p id="output"></p>
+		</form>
+</body>
+</html>

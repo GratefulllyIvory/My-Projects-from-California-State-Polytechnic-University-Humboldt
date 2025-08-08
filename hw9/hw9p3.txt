@@ -1,0 +1,15 @@
+Daniel Desforges
+a: 3011890 -rw-rw-r--. 2 djd86 djd86 0 Dec 11 19:28 someCommands.txt
+b: find ~ -type l print
+c: /home/djd86/hw9/refSCommands.txt
+D:
+0 0 0 refHCommands.txt
+0 0 0 refSCommands.txt
+0 0 0 someCommands.txt
+echo nyan nyan
+ 1  3 15 refHCommands.txt
+ 1  3 15 refSCommands.txt
+ 1  3 15 someCommands.txt
+e:
+
+8883 (number of found links)

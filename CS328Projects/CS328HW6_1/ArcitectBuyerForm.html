@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+
+<head>
+
+	<link rel="stylesheet" type= "text/css" href="./hw2style.css">
+	<meta name="author" content="Daniel Desforges, djd86@humboldt.edu" />
+
+	<meta name="description" content="HSU CS328, "/>
+
+	<meta name="keywords" content="CS 328,
+	HSU, Humboldt, Humboldt
+	State, Humboldt State University, California State University, Arcata,
+	California,Homework,Web Apps" />
+          
+	<title> Project6_1FormCS328</title>
+</head>
+<style>
+
+	table, th, td
+	{
+		border: 3px solid darkgreen;
+	}
+
+</style>
+<body>
+	<table>
+		<tr>
+			<td><img src="https://www.usnews.com/dims4/USNEWS/5f475a0/2147483647/crop/2000x1334%2B0%2B0/resize/970x647/quality/85/?url=http%3A%2F%2Fmedia.beam.usnews.com%2Fa5%2F60%2Fbe7bf1ac4894a3098e04b0c080c6%2F200820-1000cash-stock.jpg" alt="moneyimg" width="100" height="200"></td><br>
+			<td><body>
+			<h2><strong><u>BuyersForm</u></strong></h2>
+			<form method="post" action="ArcitectBuyerForm.php">
+			<label for="firstN" required>Enter Buyers First Name:</label>
+			<input type="text" name="first" id="firstN"><br>
+			<label for="lastN">Enter Buyers Last Name:</label>
+			<input type="text" name="last" id="lastN"><br>
+			<label for="email">Enter Buyer Contact Email:</label>
+			<input type="email name="email" id="email"><br>
+			<label for="telephone">Enter Buyer Contact Telephone</label>
+			<input type="tel" id="telephone" pattern="[0-90]{3}-[0-90]{3}-[0-90]{4}"><br>
+			<label for="descript">Give a brief synopsis of your what your looking to buy</label>
+			<input type="text" name="descript" id="descript"><br>
+			<p> Are you Looking for Commercial or Residential?</p>
+			<label for="commercial">Commercial</label>
+			<input type="checkbox" id="commercial" name= "commercial">
+			<label for="residential">Residential</label>
+			<input type="checkbox" id="residential" name="residential"><br>
+			<label for="budget">What is your budget?</label>
+			<input type="number" id="budget" name="budget"><br>
+			<input type="submit" value="BuyersForm">
+			<input type="reset">
+			</form>
+			</body>
+			</td>
+			<p>If you wish to check out the sellers page click <a href= "./ArcitectSellerForm.html">HERE</a></p>
+		</tr>	
+	</table>
+			
+</html>			
+

@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+
+<head>
+
+	<link rel="stylesheet" type= "text/css" href="./hw2style.css">
+	<meta name="author" content="Daniel Desforges, djd86@humboldt.edu" />
+
+	<meta name="description" content="HSU CS328, "/>
+
+	<meta name="keywords" content="CS 328,
+	HSU, Humboldt, Humboldt
+	State, Humboldt State University, California State University, Arcata,
+	California,Homework,Web Apps" />
+          
+	<title> Homework2CS328</title>
+</head>
+<style>
+
+	table, th, td
+	{
+		border: 3px solid darkred;
+	}
+
+</style>
+<body>
+	<table>
+		<tr>
+			<td><img src="https://res.cloudinary.com/cook-becker/image/fetch/q_auto:best,f_auto,w_1920,e_sharpen/https://candb.com/site/candb/images/artwork/talos-blueprint-prey.jpg" alt="Blueprint" width="100" height="200"></td><br>
+			<td><body>
+			<h2><u>Architect/SellersForm</u></h2>
+			<form method="post" action="ArcitectSellerForm.php">
+			<label for="first">Enter Sellers First Name:</label>
+			<input type="text" name="first" id="first"><br>
+			<label for="last">Enter Sellers Last Name:</label>
+			<input type="text" name="last" id="last"><br>
+			<label for="email">Enter Sellers Contact Email:</label>
+			<input type="email name="email" id="email"><br>
+			<label for="telephone">Enter Sellers Contact Telephone</label>
+			<input type="tel" id="telephone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"><br>
+			<label for="descript">Give a brief synopsis of your what your selling. Then add the specs below</label>
+			<input type="text" name="descript" id="descript"><br>
+			<label for="height">Enter buildings height in meters</label>
+			<input type="number" id="height" name="height"><br>
+			<label for="rooms">Enter number of rooms</label>
+			<input type="number" id="rooms" name="rooms"><br>
+			<label for="hirerate">Enter your personal hire rate</label>
+			<input type="number" id="hirerate" name="hirerate"><br>
+			<p> Are you willing to work remote or on site?</p>
+			<label for="remote">Remote</label>
+			<input type="checkbox" id="remote" name= "remote">
+			<label for="onsite">OnSite</label>
+			<input type="checkbox" id="onsite" name="onsite"><br>
+			<input type="submit" value="ArcitectSellerForm">
+			<input type="reset">
+			</form>
+			</body>
+			</td>
+			<p>If you wish to check out the buyers page click <a href= "./ArcitectBuyerForm.html">HERE</a></p>
+			
+		</tr>	
+	</table>
+			
+</html>		
