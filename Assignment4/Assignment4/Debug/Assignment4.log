@@ -1,0 +1,5 @@
+﻿  Microsoft (R) Incremental Linker Version 14.24.28316.0
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  "/OUT:C:\Users\djbb1\source\repos\Assignment4\Debug\Assignment4.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST "/MANIFESTUAC:level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG:FASTLINK "/PDB:C:\Users\djbb1\source\repos\Assignment4\Debug\Assignment4.pdb" /SUBSYSTEM:CONSOLE "/PGD:C:\Users\djbb1\source\repos\Assignment4\Debug\Assignment4.pgd" /LTCG:PGOptimize /TLBID:1 /DYNAMICBASE /NXCOMPAT "/IMPLIB:C:\Users\djbb1\source\repos\Assignment4\Debug\Assignment4.lib" /MACHINE:X86 Debug\Assignment4.obj 
+LINK : fatal error LNK1266: error reading instrumentation file 'C:\Users\djbb1\source\repos\Assignment4\Debug\Assignment4.pgd'; File not found

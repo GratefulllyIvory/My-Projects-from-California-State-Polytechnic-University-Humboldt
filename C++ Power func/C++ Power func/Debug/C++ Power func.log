@@ -1,0 +1,4 @@
+﻿  C++ Power func.cpp
+C:\Users\HP\source\repos\C++ Power func\C++ Power func\C++ Power func.cpp(30,5): error C2065: 'cout': undeclared identifier
+C:\Users\HP\source\repos\C++ Power func\C++ Power func\C++ Power func.cpp(31,5): error C2065: 'cin': undeclared identifier
+C:\Users\HP\source\repos\C++ Power func\C++ Power func\C++ Power func.cpp(32,5): error C2065: 'cout': undeclared identifier

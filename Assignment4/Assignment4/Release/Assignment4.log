@@ -1,0 +1,7 @@
+﻿  Assignment4.cpp
+C:\Users\djbb1\source\repos\Assignment4\Assignment4\Assignment4.cpp(8,23): warning C4101: 'sum': unreferenced local variable
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 12 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  Assignment4.vcxproj -> C:\Users\djbb1\source\repos\Assignment4\Release\Assignment4.exe
