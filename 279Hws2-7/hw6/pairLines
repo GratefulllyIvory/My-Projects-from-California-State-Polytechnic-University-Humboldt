@@ -1,0 +1,21 @@
+#!/bin/bash
+#DanielDesforges
+
+if [ $# -ne 2 ]
+then
+	echo "$0: srry must be 2 args"
+	exit 1
+fi
+if [ ! -f "$1" ]
+then
+	echo "$0: requires reg files"
+	exit 1
+fi
+if [ ! -r "$1" ]
+then
+	echo "$0: requires readable files"
+	exit 1
+fi
+grep "\($2\).*\1" "$1"
+grep -c "\($2\).*\1" "$1"
+

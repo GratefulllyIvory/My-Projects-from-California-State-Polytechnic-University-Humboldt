@@ -1,0 +1,7 @@
+Daniel Desforges
+a: every minute, every 2 hours, on the 3rd and 5th of the month, in june july and august, on thursday
+b: every 30 minutes, every 21 hours, every day of the month, every month, on saturdays
+c: 5 12 1 * *
+d: 0 17 * 9-12 0,2
+e: at 2:00am ./home/mno5/big-big-task.sh
+f: nice 19

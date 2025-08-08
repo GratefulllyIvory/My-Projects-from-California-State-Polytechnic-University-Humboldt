@@ -1,0 +1,10 @@
+#hw5P5DD
+
+a: PATH=$PATH:~st10/279stuff:~/bin:
+b: alias rm="rm -i"
+c: ls [XYZ]*[abc]
+d: test*[02468].txt
+e: grep "^X.*a$" fred
+f: grep "kkkkkkk*j" fred
+g: grep "kkkkk*j" fred
+h: [A-Za-z][A-Za-z0-9_]*

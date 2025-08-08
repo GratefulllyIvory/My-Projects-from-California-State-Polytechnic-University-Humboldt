@@ -1,0 +1,17 @@
+/* Daniel Desforges Style Sheet LastMod: 2/19/21*/
+@keyframes animatecolor{
+  from {background-color:blue;}
+  to {background-color: yellow;}
+}
+body{
+	background-color:lightblue;
+}
+h2{
+	animation-name:animatecolor;
+	animation-duration:2s;
+	animation-iteration-count:infinate;
+}
+p{
+	color:darkred;
+}
+	

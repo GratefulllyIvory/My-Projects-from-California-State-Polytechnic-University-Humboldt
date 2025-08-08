@@ -1,0 +1,13 @@
+#!/bin/bash
+#DanielDesforges
+
+for file is `ls *`
+do
+	if [ -f "$file" ]
+	then
+		if [ ! -s "$file" ]
+		then
+			rm "$file"
+		fi
+	fi
+done

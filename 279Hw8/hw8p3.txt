@@ -1,0 +1,12 @@
+Daniel Desforges
+a: head 5 .bash_profile
+b: cmp tweedledee tweedledum| find twins*
+c: find SSU.txt "Sonoma"\"Humboldt"|tee Humboldt.txt
+d: tail 4 *.txt
+e: tar 279tools.tar 279tools
+f: gzip 279tools.tar
+g: gzip -d 279tools.tar
+h: untar 279tools.tar
+i: ls -r 279tools
+j: sed s/"    "/head{lookity.txt} shift-look.txt
+   

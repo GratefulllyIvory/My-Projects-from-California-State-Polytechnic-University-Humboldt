@@ -1,0 +1,29 @@
+#!/bin/bash
+#DanielDesforges
+
+#prelim checks
+if [ $# -ne 1 ]
+then
+	echo "$0: must have a single arg"
+	exit 1
+fi
+if [ ! -f "$1" ]
+then
+	echo "$0: must be reglar file"
+	exit 1
+fi
+if [ ! -r "1" ]
+then
+	echo "$0: must be readable"
+	exit 1
+fi
+
+#cp non-blank linex into stripped file version
+
+while read line
+do
+	if [[ ! "$line" =~ ^$ ]]
+	then
+		echo "$line" >> "stripped-$1"
+	fi
+echo < "$1"

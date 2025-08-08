@@ -1,0 +1,5 @@
+#hw4P3DD
+
+a : ./do-things &
+b : export COLOR_Pref=blue
+c : ^Z

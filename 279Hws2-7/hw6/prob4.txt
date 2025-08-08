@@ -1,0 +1,4 @@
+Daniel Desforges
+Tests of stripBlanks
+results in order a,b,etc
+

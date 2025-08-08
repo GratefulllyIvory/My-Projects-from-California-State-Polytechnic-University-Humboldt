@@ -1,0 +1,13 @@
+#!/bin/bash
+#DanielDesforges
+
+objects=(3 6 9 "fly" "boy" "Rawr Infinate" 42)
+objects[13]="Hallelujah"
+echo "Object 3 : ${objects[3]}"
+echo "Num of Items : ${#objects[*]}"
+echo "Indices in Objects : ${!objects[*]}"
+echo "List of Objects: "
+for item in "${objects[@]}
+do
+	echo item
+done

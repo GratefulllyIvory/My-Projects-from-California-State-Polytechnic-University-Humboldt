@@ -1,0 +1,7 @@
+#!/bin/bash
+#DanielDesforges
+
+for filename in `ls test*.txt`
+do
+	echo "TAG yourIt" >> $filename
+done

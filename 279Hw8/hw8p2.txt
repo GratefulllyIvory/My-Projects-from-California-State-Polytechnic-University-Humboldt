@@ -1,0 +1,9 @@
+hw8p2DanielDesforges
+a: find ~/ a.out* path
+b: find ./ *.sh path
+c: find -name -type ~/ -d submitted path 
+d: find ~/ -d 279* ~st10/public_html path
+e: find ./ -d 755 path   
+f: find ~/ -f | wc
+g: find ~/ -f|wc |tee files-644.txt path
+

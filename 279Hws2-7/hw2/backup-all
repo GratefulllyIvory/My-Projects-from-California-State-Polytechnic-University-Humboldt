@@ -1,0 +1,9 @@
+#!bin/bash
+#Daniel Desforges
+mkdir BACKUP
+chmod700
+
+cp * BACKUP
+
+echo "Backup contents:"
+ls BACKUP

@@ -1,0 +1,20 @@
+#!/bin/bash
+#DanielDesforges
+
+if [[ $# -eq 0 ]]
+then
+	echo "EnterShelltoEdit:"
+	read scriptName
+else
+	scriptName=$1
+fi
+if [[! -e $scriptName ]]
+	echo "#!/bin/bash" > $scriptName
+	echo >> $scriptName
+	echo "# $scriptName" >> $scriptName
+	echo "# BigBunny" >> $scriptName
+	echo -n "#" >> $scriptName
+	date >> $scriptName
+	echo >> $scriptName
+fi
+nano $scriptName

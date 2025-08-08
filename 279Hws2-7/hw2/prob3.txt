@@ -1,0 +1,9 @@
+Daniel Desforges
+#a
+/users/cbrown/football/past-seasons/f21-schedule.txt
+#b
+ls -l football/past-seasons/f20-schedule.txt
+#c
+mv football/f22-schedule.txt football/past-seasons
+#d
+ls -ld ../../football

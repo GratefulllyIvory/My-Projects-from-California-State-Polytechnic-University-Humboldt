@@ -1,0 +1,6 @@
+Called with a single argument
+325lab2-out.txt : is regular file
+325lab5 : is directory
+Called with a single argument
+nyanyan.txt : not a file in curdir
+Called with a single argument

@@ -1,0 +1,24 @@
+#!/bin/bash
+#DanielDesforges
+
+givenFile=$1
+if [[ ! -e "givenFile" ]]
+then
+	echo "$givenFile does not exist"
+	echo "Check these out though"
+	ls
+	while [[ ! -e "givenFile" ]]
+	do
+		echo -n "Enter Existing File: "
+		read givenFile
+	done
+fi
+ls -ld $givenFile
+
+if [[ -d $givenFile ]]
+then
+	echo "This is a directory"
+else
+	wc $givenFile
+fi
+

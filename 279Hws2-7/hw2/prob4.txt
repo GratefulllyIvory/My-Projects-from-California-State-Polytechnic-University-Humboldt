@@ -1,0 +1,12 @@
+Daniel Desforges
+
+#A
+prob4=applebutter
+#B
+echo "\$prob4 equals $prob4"
+#C
+echo "ooo$prob4"
+#D
+echo "${prob4}ooo"
+#E
+echo "ooo${prob4}ooo"

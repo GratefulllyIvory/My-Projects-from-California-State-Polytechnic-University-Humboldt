@@ -1,0 +1,78 @@
+/* by: Sharon Tuttle              */
+/* created:       2010-06-21      */
+/* last modified: 2020-07-08 - adding styling for elements h3 through h6...!*/
+/*                             (ended up refactoring and modifying the      */
+/*                             styling for h1, h2, and th along the way)    */
+/*                2014-08-24 - added margin-left and margin-right to body   */
+/*                             element, because normalized the text became  */
+/*                             flush with the body's edges                  */
+/*                             (adding padding-left and padding-right to    */
+/*                             td, th elements for similar reasons)         */
+/*                             ...using em in hopes more scalable for       */
+/*                                different devices?                        */
+/*                2015-02-16 - changed table border width from 1px to thin  */
+/*                             in hopes more scalable as well...?           */
+
+body
+{
+    background-color: #FFFFDC;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+}
+
+.centered 
+{   
+    text-align: center;
+}
+
+.centered table
+{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+h1, h2, h3, h4, h5, h6, th
+{
+    font-family: verdana;
+    color: #006600;
+    font-weight: bold;
+}
+
+h1
+{
+    font-size: 1.75em;
+}
+
+h2
+{
+    font-size: 1.5em;
+}
+
+h3
+{
+    font-size: 1.25em;
+}
+
+table
+{
+    border-collapse:collapse;
+}
+
+table, th, td
+{
+    border: thin solid black;
+}
+
+caption
+{
+    font-family: verdana;
+    font-weight: bold;
+}
+
+th, td
+{
+    text-align: center;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}

@@ -1,0 +1,7 @@
+#hw4P2DD
+
+A : %2 
+B : Job %3, vi hw3-prob3.txt
+C : kill %nano
+D : + indicates Job 3 is current job
+E : Job %6, doIt.sh

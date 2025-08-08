@@ -1,0 +1,16 @@
+Daniel Desforges
+
+#A
+ls *.txt save-it
+#B
+cp lab*.txt save-it
+#C
+lab1.txt
+lab2.txt
+lab3.txt
+OLDlab1.txt
+OLDlab4.txt
+slab-msrmts.txt	
+lab45.rkt
+lab754.pl
+lab9.cpp

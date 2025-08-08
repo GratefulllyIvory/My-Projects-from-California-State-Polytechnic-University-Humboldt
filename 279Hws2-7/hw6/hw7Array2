@@ -1,0 +1,24 @@
+#!/bin/bash
+#DanielDesforges
+
+if [ $# -lt 1 ]
+then
+	echo "$0: 404"
+	exit 1
+fi
+elems=("$@")
+elems[13]="Supernova"
+if [ ${#elems[3] -gt 0 ]
+then
+	echo "third element is ${elems[3]}
+else
+	elems[3]=nyan
+fi
+echo "Num of elems : ${#elems[*]}"
+echo "indecies of elems : : ${!elems[*]}"
+echo "List of elems: "
+for item in "${elems[*]}"
+then
+	echo $item
+done
+

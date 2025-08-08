@@ -1,0 +1,32 @@
+#!/bin/bash
+#DanielDesforges
+#find nondirectory regular files in cd then back up
+
+if (( $# == 0 ))
+then 
+	echo "EnterDirectory to back Files up TO: "
+	read backupDir
+else
+	backupDir=$1
+fi
+
+if [[ (-e "$backupDir") && (! -d "$backupDir") ]]
+then
+	echo "$backupDir in use and cannot be backed up to"
+	exit 1
+fi
+
+if [ ! -e "$backupDir" ]
+then
+	mkdir $backupDir
+fi
+
+for file in `ls`
+do
+	if [ -f "$file" ]
+	then
+		cp "$file" $backupDir
+	fi
+done
+echo "Results of $backupDir"
+ls $backupDir

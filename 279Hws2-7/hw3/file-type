@@ -1,0 +1,18 @@
+#!/bin/bash
+#daniel desforges
+
+if [ ! $# -eq 1 ]
+then
+	echo "Called with a single argument"
+	exit 1
+fi
+
+if [ -f "$1" ]
+then
+	echo "$1 : is regular file"
+elif [ -d "$1" ]
+then 
+	echo "$1 : is directory"
+else
+	echo "$1 : not a file in curdir"
+fi 	
